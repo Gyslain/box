@@ -19,7 +19,7 @@ N = 9
 x1 = linspace(min_d, max_d, N)
 x2 = linspace(min_d, max_d,2*N-1)
 
-square = [ e*e for e in x1 ]
+square = [ v*v for v in x1 ]
 plot(x1, square, label="square", marker=:o)
 
 ii = [5,6,7,8]
@@ -38,7 +38,7 @@ plot(getLanczosKernel(a), label="kernel", marker=:o, reuse=false)
 
 
 kernel = getLanczosKernel2(a)
-plot(kernel, label="kernel", marker=:o, reuse=false)
+plot(kernel, label="kernel2", marker=:o, reuse=false)
 
 assert(length(kernel)%2 == 0)
 tmp = zeros(length(square))
@@ -65,5 +65,4 @@ end
 upsampled[end] = square[end]
 plot(upsampled, label="upsampled square", marker=:o, reuse=false)
 
-
-
+println("OK")
